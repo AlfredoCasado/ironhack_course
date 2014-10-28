@@ -1,15 +1,20 @@
 
-def caesar_cypher_inject(clearString) 
+def caesar_cypher_inject(clearString, shift=3) 
 	clearString.each_char.inject('') do |cyphedString, originalChar| 
-		cyphedString += (originalChar.ord+1).chr
+		cyphedString += transform_char(originalChar, shift)
 	end
 end
 
-def caesar_cypher_each(clearString) 
-	cyphedString = ''
-	clearString.each_char { |originalChar| cyphedString += (originalChar.ord+1).chr }
-	cyphedString
+def transform_char(char, shift) 
+	new_char = (char.ord+shift) % 127 
+	if new_char < 0 
+		new_char = 127 + new_char
+	end
+	new_char.chr
 end
 
-puts caesar_cypher_inject("adios")
-puts caesar_cypher_each("adios")
+cyphed = caesar_cypher_inject("alfredo",2)
+uncyphed = caesar_cypher_inject(cyphed,-2)
+
+puts "cyphed:" + cyphed
+puts "uncyphed:" + uncyphed

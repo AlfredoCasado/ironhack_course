@@ -1,3 +1,5 @@
+require './Time.rb'
+
 class TimeRange
 
 	def initialize(line) 
