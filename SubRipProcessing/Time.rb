@@ -8,6 +8,7 @@ class Time
 	end
 
 	def shift(miliseconds) 
+		
 		@milisecond+=miliseconds%1000
 		
 		if (@milisecond > 1000) 
@@ -16,6 +17,7 @@ class Time
 		end
 
 		@second+=miliseconds/1000
+
 	end
 
 	def to_s
