@@ -91,6 +91,7 @@ cart = ShopingCart.new(
 
 
 
+
 cart.add :apple
 cart.add :apple
 puts cart.cost

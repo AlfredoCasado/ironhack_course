@@ -49,7 +49,7 @@ class EmployeeFactory
 		employeeType = lineParts[0]
 		
 		if employeeType == 'Base' 
-			return BaseSalaryEmployee.new(lineParts, notificatorFactory.createNotificator(...))
+			return BaseSalaryEmployee.new(lineParts)
 		elsif employeeType == 'Hour'
 			return HourEmployee.new(lineParts)
 		elsif employeeType == 'BasePlusHour'
@@ -58,15 +58,6 @@ class EmployeeFactory
 	end
 
 	
-end
-
-class NotificatorFactory
-	
-	def createNotificator(type)
-
-		if type ..... Twitter.new
-	end
-
 end
 
 payrolls = PayrollCalculator.new("employees.txt")
